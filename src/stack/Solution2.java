@@ -2,9 +2,14 @@ package stack;
 
 import java.util.List;
 
+import static stack.Solution.$;
+
+/**
+ * Question no.70
+ * Question no.69 + reserve
+ */
 public class Solution2 {
     public static void main(String[] args) {
-        int $ = Integer.MAX_VALUE;
         System.out.println(new Solution2()
                 .levelOrderBottom(Solution.getTree(1, 2, 3,
                         4, $, $, 5,
@@ -13,7 +18,7 @@ public class Solution2 {
     }
     /*
      * @param root: A tree
-     * @return: buttom-up level order a list of lists of integer
+     * @return: bottom-up level order a list of lists of integer
      */
     public List<List<Integer>> levelOrderBottom(Solution.TreeNode root) {
         List<List<Integer>> listList = new Solution().levelOrder(root);

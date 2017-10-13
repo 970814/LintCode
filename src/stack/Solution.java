@@ -4,12 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+/**
+ * Question no.69
+ * DFS
+ */
 public class Solution {
+    final static int $ = Integer.MAX_VALUE;
     public static void main(String[] args) {
-        System.out.println(new Solution().levelOrder(new Solution().getTree(3, 9, 20, Integer.MAX_VALUE, Integer.MAX_VALUE, 15, 7)));
+
+        System.out.println(new Solution()
+                .levelOrder(getTree(3, 9, 20
+                        , $, $, 15, 7)));
     }
-    private class TreeNode {
+
+    static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -20,13 +28,13 @@ public class Solution {
         }
     }
 
-    private TreeNode getTree(int... values) {
+    public static TreeNode getTree(int... values) {
         return grow(0, values);
     }
 
-    private TreeNode grow(int x, int[] values) {
+    private static TreeNode grow(int x, int[] values) {
         TreeNode node = null;
-        if (x < values.length && values[x] != Integer.MAX_VALUE) {
+        if (x < values.length && values[x] != $) {
             node = new TreeNode(values[x]);
             node.left = grow(2 * x + 1, values);
             node.right = grow(2 * x + 2, values);
